@@ -8,7 +8,6 @@ import NewRoutes from './routes/New';
 import ActiveRoutes from './routes/Active';
 import CompletedRoutes from './routes/Completed';
 import configureStore from './stores/index';
-import './main.less';
 
 const store = configureStore();
 ReactDOM.render(
