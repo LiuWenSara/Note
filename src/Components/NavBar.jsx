@@ -11,11 +11,7 @@ class NavBar extends Component{
     render(){
         return (
             <div className="nav-bar">
-                <Menu
-                    style={{ width: 240 }}
-                    defaultSelectedKeys={['1']}
-                    defaultOpenKeys={['sub1']}
-                >
+                <Menu style={{ width: 240 }} defaultSelectedKeys={['1']} defaultOpenKeys={['sub1']}>
                     <Menu.Item key="1">
                         <BaseLink to="/">
                             全部

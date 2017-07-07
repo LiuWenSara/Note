@@ -20,8 +20,7 @@ class Header extends Component{
      */
     handleClick(e) {
         e.preventDefault();
-
-        const inputNode = findDOMNode(this.refs.newTodo);
+        const inputNode = findDOMNode(this.refs.newTodo);//获取到真实DOM节点
         const text = inputNode.value.trim();
 
         if(text.length > 20){

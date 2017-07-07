@@ -28,7 +28,7 @@ class App extends Component {
             <div>
                 <Header onAdd={text => addTodos(text)} todolist={todolist}/>
                 <Navbar allNum={AllNum} newNum={numArr[0]} activeNum={numArr[1]} completeNum={numArr[2]}/>
-                {this.props.children}
+                {this.props.children}/*表示组件的所有子节点，对应路由的嵌套组件*/
             </div>
         )
     }
@@ -41,9 +41,17 @@ App.propTypes = {
         complete: PropTypes.bool.isRequired,
     }).isRequired).isRequired,
 };
+/*
+ *一个函数，建立一个外部state对象到UI组件的关系映射，返回一个对象，里面每个健值对应一个映射；
+ * 第一个参数一直是state，也可接受第二个参数代表容器组件的props对象。
+ * 会订阅state，发生改边即更新结果；
+ */
 const mapStateToProps = (state) => {
     return {todolist: state.todolist};
 };
+/*
+ *一个函数，建立UI组件到action的映射
+ */
 const mapDispatchToProps = (dispatch) => {
     return{
         addTodos:(text) => {
@@ -51,5 +59,5 @@ const mapDispatchToProps = (dispatch) => {
         },
     }
 };
-
+//使用connect生成容器组件；
 export default connect(mapStateToProps, mapDispatchToProps)(App);

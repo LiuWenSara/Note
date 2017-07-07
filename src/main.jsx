@@ -12,9 +12,9 @@ import configureStore from './stores/index';
 const store = configureStore();
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={hashHistory}>
+        <Router history={hashHistory}>/*用来路由变化的由hash变化决定，即地址后面／#／后的值*/
             <Route path='/' component={App}>
-                <IndexRoute component={AllTodosRoutes}/>
+                <IndexRoute component={AllTodosRoutes}/>/*指定默认情况下加载的子组件*/
                 <Route path='/new' component={NewRoutes}/>
                 <Route path='/active' component={ActiveRoutes}/>
                 <Route path='/completed' component={CompletedRoutes}/>

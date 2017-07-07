@@ -1,7 +1,7 @@
 /*
  * action 类型
  */
-
+//Action 就是 View 发出的通知，表示 State 应该要发生变化了。
 
 export const ADD_TODO = "ADD_TODO";
 export const NEW_TO_ACTIVE = "NEW_TO_ACTIVE";
@@ -41,6 +41,9 @@ export const addTodo = (text) => {
         }, 2);
     };
 };
+/*
+* 以下函数叫 Action Creator
+* */
 /*
 改变新事项事项状态为正在做的函数
 index为改变状态事项的下标
